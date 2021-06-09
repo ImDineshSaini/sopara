@@ -12,5 +12,7 @@ Feature
 1. List of TV Serials
 2. Search TV Series by Actor
 
-Live Demo
-1. 
+ Demo
+1. https://github.com/ImDineshSaini/sopara/blob/main/public/Screenshot%202021-06-09%20at%2011.58.40%20PM.png
+2. https://github.com/ImDineshSaini/sopara/blob/main/public/Screenshot%202021-06-09%20at%2011.59.06%20PM.png
+3. 
