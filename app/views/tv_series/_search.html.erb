@@ -1,0 +1,9 @@
+<div class="input-group">
+  <div class="form-outline">
+    <%= form_with url: "/", method: :get, :class => 'form=outline' do |form| %>
+      <%= form.text_field :query, class: 'form-control', value: @query.present? ? @query : "", placeholder: 'Search by actor' %>
+  </div>
+      <%= form.submit "Search", :class=> "btn btn-outline-primary"%>
+    <% end %>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <div class="row text-center text-white mb-5">
+    <div class="col-lg-7 mx-auto">
+      <h1 class="display-4">TV Series List</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <%= render :partial => 'search', :object => @parameter%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <%= render :partial => 'serial_box', :object => @tv_series if @tv_series.present? %>
+    </div>
+  </div>
+</div>

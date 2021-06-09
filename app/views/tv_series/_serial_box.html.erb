@@ -1,0 +1,41 @@
+<!-- List group-->
+<ul class="list-group shadow">
+  <!-- list group item-->
+  <% @tv_series.each do |ts| %>
+    <li class="list-group-item">
+      <!-- Custom content-->
+      <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+        <div class="media-body order-2 order-lg-1">
+          <h5 class="mt-0 font-weight-bold mb-2"><%= ts.name %></h5>
+          <p class="font-italic text-muted mb-0 small">
+            <%= ts.genre.name %> |
+            <%= ts.no_of_seasons %> Season(s) |
+            <%= ts.release_on %> |
+            <%= ts.shoot_location.present? ? ts.shoot_location.name : '' %> |
+            <%= ts.country.present? ? ts.country.name : ''%>
+          <p class="font-italic text-muted mb-0 small">
+            Actors:
+            <% ts.actors.each do |ac| %>
+              <%= ac.name %>
+            <% end %>
+          <p class="font-italic text-muted mb-0 small">
+            Director:
+            <% ts.directors.each do |ac| %>
+              <%= ac.name %>
+            <% end %>
+          <p class="font-italic text-muted mb-0 small">
+            Average Ratings:
+            <% ts.reviews.average(:stars)%>
+          <p class="font-italic text-muted mb-0 small">
+            Reviews:
+            <% ts.reviews.each do |ac| %>
+              <%= ac.user.name %> gives
+              <%= ac.stars %> Stars and said
+              "<%= ac.review %>"<br>
+            <% end %>
+
+        </div>
+      </div> <!-- End -->
+    </li> <!-- End -->
+  <% end %>
+</ul> <!-- End -->
