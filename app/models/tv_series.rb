@@ -6,4 +6,10 @@ class TvSeries < ApplicationRecord
   has_many :actors, through: :participants, source: :castable, source_type: 'Actor'
   has_many :directors, through: :participants, source: :castable, source_type: 'Director'
   has_many :reviews
+
+  validates_presence_of :name
+
+  def average_ratings
+    reviews.average(:stars)
+  end
 end

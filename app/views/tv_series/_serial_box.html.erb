@@ -25,7 +25,7 @@
             <% end %>
           <p class="font-italic text-muted mb-0 small">
             Average Ratings:
-            <% ts.reviews.average(:stars)%>
+            <%= ts.average_ratings%>
           <p class="font-italic text-muted mb-0 small">
             Reviews:
             <% ts.reviews.each do |ac| %>
