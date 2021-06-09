@@ -1,0 +1,2 @@
+class ShootLocation < ApplicationRecord
+end
