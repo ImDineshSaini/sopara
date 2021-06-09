@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: sopara
+  password: <%= ENV['SOPARA_DATABASE_PASSWORD'] %>
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  schema_search_path: public
+
+development:
+  <<: *default
+  host: localhost
+  database: sopara_development
+
+test:
+  <<: *default
+  database: sopara_test
+
+production:
+  <<: *default
+  database: sopara_production
