@@ -28,20 +28,20 @@ ActiveRecord::Schema.define(version: 2021_06_09_061734) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "crews", force: :cascade do |t|
-    t.bigint "tv_series_id"
-    t.string "crewable_type"
-    t.bigint "crewable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["crewable_type", "crewable_id"], name: "index_crews_on_crewable"
-    t.index ["tv_series_id"], name: "index_crews_on_tv_series_id"
-  end
-
   create_table "genres", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.bigint "tv_series_id"
+    t.string "castable_type"
+    t.bigint "castable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["castable_type", "castable_id"], name: "index_participants_on_castable"
+    t.index ["tv_series_id"], name: "index_participants_on_tv_series_id"
   end
 
   create_table "reviews", force: :cascade do |t|
